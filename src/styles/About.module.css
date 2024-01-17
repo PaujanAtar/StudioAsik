@@ -1,0 +1,586 @@
+.belief {
+    margin-top: 120px;
+    margin-bottom: 128px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1296px;
+    width: 86%;
+    margin: 0px auto;
+    align-content: center;
+    place-items: center;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.row1, .row2, .row3 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 36px;
+    gap: 24px;
+}
+
+@media only screen and (max-width: 800px) {
+    .row3, .row2 p, .paragraph1, .line {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .paragraph1Alt {
+        display: none;
+    }
+}
+
+.row1 {
+    flex-direction: row-reverse;
+    gap: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+    .row1 {
+        flex-direction: column;
+    }
+}
+
+.beliefHeading h1{
+    color: #222;
+    text-align: right;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+/*     max-width: 312px;
+    width: 100%; */
+    margin: 0px;
+    text-wrap: nowrap;
+}
+
+@media only screen and (max-width: 800px) {
+    .beliefHeading h1 {
+        font-size: 48px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .beliefHeading {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.line {
+    flex: 1 1;
+    width: auto;
+    height: 1px;
+    background-color: #222;
+    margin-top: 40px;
+    margin-right: 12px;
+}
+
+.lineAlt {
+    flex: 1 1;
+    width: auto;
+    height: 1px;
+    background-color: #222;
+    margin-top: 25px;
+    margin-right: 12px;
+}
+
+@media only screen and (min-width: 800px) {
+    .lineAlt {
+        display: none;
+    }
+}
+
+.paragraph1 p{
+    color: #222;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    max-width: 646px;
+    margin: 0px;
+    margin-right: 24px;
+}
+
+.paragraph1Alt p{
+    color: #222;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    max-width: 746px;
+    margin: 0px;
+}
+
+.row2 img {
+    max-width: 800px;
+    width: 80%;
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 800px) {
+    .row2 img {
+        width: 100%;
+    }
+}
+
+.row2 p {
+    color: #222;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; /* 180% */
+    margin: 0px;
+}
+
+.row3 {
+    max-width: 856px;
+    width: 100%;
+}
+
+.row3 p {
+    color: #222;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; /* 180% */
+    margin: 0px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.service {
+    margin-bottom: 208px;
+}
+
+.serviceHeading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    height: 100%;
+    margin-right: auto;
+    gap: 12px;
+}
+
+.serviceHeading h1 {
+    color: #222;
+    text-align: right;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0px;
+    margin-bottom: 36px;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 800px) {
+    .serviceHeading h1 {
+        font-size: 48px;
+    }
+}
+
+.lineService {
+    flex: 1 1;
+    width: auto;
+    height: 1px;
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .lineService {
+        margin-bottom: 30px;
+    }
+}
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    gap: 24px;
+}
+
+.cardContainer a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .cardContainer {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+
+.serviceCard {
+    border-radius: 24px;
+    background-size: cover;
+    height: 501px;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    grid-column: span 4;
+}
+
+@media only screen and (max-width: 800px) {
+    .serviceCard {
+        grid-column: span 2;
+        height: 200px;
+    }
+}
+
+.serviceCard:nth-child(1n+4) {
+    grid-column: span 3;
+}
+
+@media only screen and (max-width: 800px) {
+    .serviceCard:nth-child(1n+4) {
+        grid-column: span 1;
+        height: 200px;
+    }
+}
+
+.serviceTextUpper {
+    margin-top: auto;
+    padding: 24px;
+}
+
+.serviceTextUpper h1 {
+    color: #FFF;
+    text-align: right;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+    .serviceTextUpper h1 {
+        font-size: 16px;
+    }
+}
+
+.serviceCardTextLower {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.serviceCardTextLower img {
+    width: 8px;
+    height: 8px;
+}
+
+@media only screen and (max-width: 800px) {
+    .serviceCard:nth-child(1n+4) .serviceCardTextLower img {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+.serviceCardTextLower h6 {
+    margin: 0px;
+    color: #FFF;
+    text-align: right;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+@media only screen and (max-width: 800px) {
+    .serviceCardTextLower h6 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .serviceCard:nth-child(1n+4) .serviceCardTextLower h6 {
+        font-size: 8px;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.people {
+    margin-bottom: 232px;
+}
+
+.profile {
+    margin-bottom: 48px;
+}
+
+.profile img {
+    margin-bottom: 24px;
+}
+
+.peopleHeading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.peopleHeading h1 {
+    color: #222;
+    text-align: right;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+    .peopleHeading h1 {
+        font-size: 48px;
+    }
+}
+
+.peopleHeading hr {
+    width: 183px;
+    margin: 0px;
+    background-color: #222;
+}
+
+@media only screen and (max-width: 800px) {
+    .peopleHeading hr {
+        display: none;
+    }
+}
+
+.mainProfile {
+    margin: 48px 0;
+}
+
+.mainProfile {
+    width: 100%;
+    object-fit: cover;
+    object-position: 0px -360.515px;
+    max-width: 1296px;
+    max-height: 720px;
+}
+
+.secProfile {
+    width: 100%;
+    object-fit: cover;
+    max-height: 214px;
+    margin: 24px 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .mainProfile {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .secProfile {
+        display: none;
+    }
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    gap: 244px;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .name {
+        gap: 16px;
+    }
+}
+
+.name h2, .name h3 {
+    margin: 0px;
+}
+
+.name h2 {
+    margin-bottom: 16px;
+    color: #222;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media only screen and (max-width: 800px) {
+    .name h2 {
+        margin-bottom: 8px;
+    }
+}
+
+.name h3 {
+    color: #222;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.peopleParagraph {
+    color: #222;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; /* 180% */
+}
+
+.peopleParagraph p {
+    margin-top: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+    .peopleParagraph p {
+        display: none;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.client {
+    margin-bottom: 40px;
+}
+
+.clientHeading {
+    margin-bottom: 48px;
+}
+
+.clientLogo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.clientHeading h1 {
+    margin: 0px;
+    color: #222;
+    text-align: center;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+@media only screen and (max-width: 800px) {
+    .clientHeading h1 {
+        font-size: 48px;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.contact {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.contactContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 134px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+    .contactContent {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px;
+    }
+}
+
+.contactImage img {
+    object-fit: cover;
+    object-position: 50%;
+    width: 100%;
+    max-width: 526px;
+    height: 526px;
+}
+
+@media only screen and (max-width: 800px) {
+    .contactImage img {
+        height: 343px;
+    }
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contactForm h1 {
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.contactForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contactForm input[type=text] {
+    background-color: transparent;
+    padding: 10px 4px;
+    gap: 10px;
+    border: 0px;
+    border-bottom: 1px solid #222;
+    color: #888;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.contactForm input[type=submit] {
+    display: flex;
+    padding: 20px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 0px;
+    background: #16322C;
+    color: #FFF;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.contactForm input:focus {
+    outline: none;
+}

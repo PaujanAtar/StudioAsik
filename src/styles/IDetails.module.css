@@ -1,0 +1,231 @@
+.icon {
+    margin-top: 108px;
+}
+
+.iconContainer {
+    max-width: 1200px;
+    width: 86%;
+    margin: 0 auto;
+    align-content: center;
+    place-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon h5 {
+    margin: 0px;
+    color: var(--grayscale-unactive, #888);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}
+
+.icon a {
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.banner {
+    margin-top: 60px;
+}
+
+.bannerContainer {
+    max-width: 856px;
+    width: 86%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--Neutral-100, #2E2E2E);
+    font-family: Grotta;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 44px; /* 122.222% */
+}
+
+.content p:has(> img) {
+    text-align: center;
+    color: var(--Neutral-90, #4D4D4D);
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}
+
+.content img {
+    max-width: 500px;
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.banner h1 {
+    margin: 0px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    color: var(--neutral-100, #2E2E2E);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 44px; /* 122.222% */
+}
+
+.banner h6 {
+    margin: 0px;
+    margin-bottom: 32px;
+    color: var(--neutral-90, #4D4D4D);
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+}
+
+.banner p {
+    margin-top: 0px;
+    color: var(--neutral-90, #4D4D4D);
+
+    /* Body/Reguler/16 */
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px; /* 150% */
+}
+
+.banner h5 {
+    margin: 0px;
+    margin-top: 32px;
+    color: var(--neutral-60, #9E9E9E);
+
+    /* Caption /  Reguler / 12 */
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
+}
+
+.bannerImage {
+    border-radius: 8px;
+    max-width: 856px;
+    width: 100%;
+    max-height: 439px;
+    object-fit: cover;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.container {
+    max-width: 1296px;
+    width: 86%;
+    margin: 0 auto;
+    align-content: center;
+    place-items: center;
+}
+
+.related h1, .related h2, .related h6 {
+    margin: 0px;
+}
+
+.related hr {
+    margin-top: 124px;
+    margin-bottom: 49px;
+    stroke-width: 2px;
+    stroke: #DDD;
+}
+
+.related h1 {
+    padding-bottom: 36px;
+    color: var(--neutral-100, #2E2E2E);
+
+    /* Caption /  Medium / 26 */
+    font-family: 'DM Sans';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 32px; /* 123.077% */
+}
+
+.roulette {
+    margin-top: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+@media only screen and (max-width: 800px) {
+    .roulette {
+      flex-direction: column;
+      gap: 24px;
+    }
+}
+
+
+.roulette::-webkit-scrollbar {
+    height: 10px;
+    width: 50px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.roulette::-webkit-scrollbar-track {
+    background: #DDD;
+    border: 4px solid transparent;
+    background-clip: content-box;   /* THIS IS IMPORTANT */
+}
+
+.roulette::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 5px solid #16322C;
+    width:50px;
+}
+
+.card {
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.card img {
+    border-radius: 8px;
+    max-width: 352px;
+    width: 100%;
+    max-height: 204px;
+    object-fit: cover;
+}
+
+.card h2 {
+    overflow: hidden;
+    color: var(--neutral-100, #2E2E2E);
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 120% */
+}
+
+.card h6 {
+    color: var(--neutral-90, #4D4D4D);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+}

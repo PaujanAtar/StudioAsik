@@ -1,0 +1,243 @@
+.menu {
+    position: fixed;
+    background-color: #16322C;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: none;
+    }
+}
+
+.x {
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    position: absolute;
+    left: 100%;
+    top: 30px;
+}
+
+.container {
+    max-width: 1296px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 90px 0;
+    align-content: center;
+    place-items: center;
+    position: relative;
+}
+
+.menuContainer {
+    display: grid;
+    grid-template-columns: 0.75fr 0.5fr 1.1fr;
+    gap: 48px;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.column1 img {
+    width: 220px;
+    height: 175px;
+}
+  
+.column1 h1 {
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif; 
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0.5rem 0rem;
+}
+
+
+.column2 nav {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+  
+.column2 a {
+    color: #FFF;
+    font-family: 'Montserrat';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.column3 {
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: lighter;
+    line-height: normal;
+}
+
+.column3 form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.column3 input[type=text] {
+    background-color: transparent;
+    padding: 10px 4px;
+    gap: 10px;
+    border: 0px;
+    border-bottom: 1px solid #FFF;
+    color: #888;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.column3 input[type=submit] {
+    display: flex;
+    padding: 20px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: #FFF;
+    color: #16322C;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    border: none;
+}
+
+.column3 input:focus {
+    outline: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 600px) {
+    .containerAlt {
+        display: none !important;
+    }
+}
+
+.containerAlt {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding: 24px 16px;
+    height: 100vh;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.row1 img {
+    width: 90px;
+    height: 72px;
+}
+
+.xAlt {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.xAlt img {
+    width: 36px;
+    height: 36px;
+}
+
+.row2 nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 8px;
+    column-gap: 24px;
+}
+
+.row2 a {
+    color: #FFF;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.row3 {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.archdailyMenu {
+    background-image: url("/Icons/ellipse white.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.archdailyMenu img {
+    object-fit: contain;
+}
+
+.row4 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row4 h1 {
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif; 
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0px;
+}
+.row5 {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: #FFF;
+}
+
+.row5 a {
+    color: #16322C;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+}

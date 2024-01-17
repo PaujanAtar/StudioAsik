@@ -3,4 +3,21 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  env: {
+    NEXT_PUBLIC_STUDIOASA: process.env.NEXT_PUBLIC_STUDIOASA,
+  },
+};
+
+module.exports = 
+{
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.dash.studioasa.id',
+        pathname: '/**'
+      },
+    ],
+  },
+}
