@@ -257,7 +257,7 @@
 }
 
 .secondary {
-    margin: 132px 100px 24px 54px;
+    padding: 132px 100px 24px 54px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -291,10 +291,11 @@
 .secondary h1 {
     margin-bottom: 26px;
     color: #FFF;
-    font-size: 40px;
+    font-size: 37px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    white-space: nowrap;
 }
 
 .secondary p {

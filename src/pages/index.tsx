@@ -1,7 +1,7 @@
 import Head from "next/head"
 import styles from "@/styles/Home.module.css"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -202,6 +202,27 @@ export default function Home({
 
   const [index, setIndex] = useState(0)
 
+  const [currentIndex, setCurrentIndex] = useState({ i: 0, j: 0 })
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setGaleri((prevGaleri) => {
+        const newJ = (prevGaleri[currentIndex.i]?.child + 1) % 5
+        const newI =
+          newJ === 0 ? (currentIndex.i + 1) % carousel.length : currentIndex.i
+
+        const newGaleri = [...prevGaleri]
+        newGaleri[currentIndex.i] = { parent: currentIndex.i, child: newJ }
+
+        setCurrentIndex({ i: newI, j: newJ })
+        return newGaleri
+      })
+    }, 3000)
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(timer)
+  }, [currentIndex, carousel.length])
+
   const [galeri, setGaleri] = useState<
     Array<{ parent: number; child: number }>
   >(Array.from({ length: carousel.length }, () => ({ parent: 0, child: 0 })))
@@ -297,13 +318,12 @@ export default function Home({
           </div>
           <div className={styles.secondary}>
             <h2>GARDEN DESIGN, RESIDENTIAL</h2>
-            {/* <h1
+            <h1
               style={{ textTransform: "uppercase" }}
               dangerouslySetInnerHTML={{
                 __html: latest[index].title.rendered,
               }}
-            /> */}
-            <h1>LULUK MD GREENHOUSE</h1>
+            />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
               nisi dolore natus, modi blanditiis dolor suscipit voluptatibus

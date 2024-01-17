@@ -358,6 +358,12 @@
     width: 100vw;
 }
 
+@media only screen and (min-width: 600px) {
+    .popupContainer {
+        display: none;
+    }
+}
+
 .filterPopup {
     margin: 40px 16px 0px 16px;
     display: flex;

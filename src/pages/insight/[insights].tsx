@@ -1,8 +1,9 @@
 import Head from "next/head"
 import styles from "@/styles/IDetails.module.css"
-import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { useRouter } from "next/router"
+import { Router } from "react-router-dom"
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -47,6 +48,8 @@ const InsightDetails = ({
   contents: any
   relateds: any
 }) => {
+  const router = useRouter()
+
   return (
     <>
       <Head>
@@ -112,16 +115,40 @@ const InsightDetails = ({
           <h1>Related</h1>
           <div className={styles.roulette}>
             {relateds?.map((related: any) => {
-              return (
-                <div className={styles.card} key={related.id}>
-                  <img
-                    src={related._embedded["wp:featuredmedia"][0].source_url}
-                    alt="card"
-                  />
-                  <h6>{related.date}</h6>
-                  <h2>{related.title.rendered}</h2>
-                </div>
-              )
+              const datetimeString = related.date
+
+              // Convert the string to a Date object
+              const date = new Date(datetimeString)
+
+              // Options for formatting the date
+              const options: Intl.DateTimeFormatOptions = {
+                day: "numeric",
+                month: "long",
+                year: "numeric" as const, // Explicitly define the type
+              }
+
+              // Format the date using toLocaleDateString
+              const formattedDate = date.toLocaleDateString("id-ID", options)
+
+              const isCurrentPage = router.query.insights === related.slug
+
+              if (!isCurrentPage) {
+                return (
+                  <Link href={"/insight/" + related.slug}>
+                    <div className={styles.card} key={related.id}>
+                      <img
+                        src={
+                          related._embedded["wp:featuredmedia"][0].source_url
+                        }
+                        alt="card"
+                      />
+                      <h6>{formattedDate}</h6>
+                      <h2>{related.title.rendered}</h2>
+                    </div>
+                  </Link>
+                )
+              }
+              return
             })}
           </div>
         </div>

@@ -167,6 +167,10 @@
     overflow-x: scroll;
 }
 
+.roulette a {
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 800px) {
     .roulette {
       flex-direction: column;
