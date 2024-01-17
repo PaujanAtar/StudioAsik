@@ -114,7 +114,7 @@ const InsightDetails = ({
           <hr />
           <h1>Related</h1>
           <div className={styles.roulette}>
-            {relateds?.map((related: any) => {
+            {relateds?.map((related: any, i: any) => {
               const datetimeString = related.date
 
               // Convert the string to a Date object
@@ -134,8 +134,8 @@ const InsightDetails = ({
 
               if (!isCurrentPage) {
                 return (
-                  <Link href={"/insight/" + related.slug}>
-                    <div className={styles.card} key={related.id}>
+                  <Link href={"/insight/" + related.slug} key={related.id}>
+                    <div className={styles.card}>
                       <img
                         src={
                           related._embedded["wp:featuredmedia"][0].source_url
