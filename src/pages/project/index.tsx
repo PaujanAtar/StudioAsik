@@ -9,7 +9,7 @@ export const getServerSideProps = async (context: any) => {
     `${process.env.NEXT_PUBLIC_STUDIOASA}kategori-project?per_page=100`
   )
 
-  const data = await res.json()
+  const data = await res?.json()
 
   const api = data?.filter(
     (val: any) =>
@@ -139,7 +139,6 @@ const Project = ({ api, url }: { api: any; url: any }) => {
                           setFilter([...filter, cats.name])
                           setId([...id, cats.id])
                           if (id.length === 0) {
-                            console.log(cats.name)
                             setParam("&kategori-project=")
                             router.push(
                               `/project/?filter=${[cats.name]}`,
@@ -169,9 +168,7 @@ const Project = ({ api, url }: { api: any; url: any }) => {
       <div className={styles.hero}>
         <div className={styles.container}>
           <div className={styles.heroContent}>
-            <h1 onClick={() => console.log(filter, id, param)}>
-              Curated Projects
-            </h1>
+            <h1>Curated Projects</h1>
             <p className={styles.p}>
               At Studio ASA, we approach each project with a commitment to
               understanding our clients&apos; unique vision and needs. Our team
@@ -229,18 +226,17 @@ const Project = ({ api, url }: { api: any; url: any }) => {
                           setId((prevId) =>
                             prevId.filter((item) => item !== cats.id)
                           )
-                          setParam("")
-                          router.push("/project/", undefined, {
-                            shallow: true,
-                          })
                           if (id.length === 1) {
+                            setParam("")
+                            router.push("/project/", undefined, {
+                              shallow: true,
+                            })
                           }
                         } else {
                           // If category is not in the array, add it
                           setFilter([...filter, cats.name])
                           setId([...id, cats.id])
                           if (id.length === 0) {
-                            console.log(cats.name)
                             setParam("&kategori-project=")
                             router.push(
                               `/project/?filter=${[cats.name]}`,
@@ -291,7 +287,6 @@ const Project = ({ api, url }: { api: any; url: any }) => {
                             // Remove the corresponding ID using the filterIndex
                             setId((prevId) => {
                               const testId = prevId
-                              /* console.log(testId, testId) */
                               testId.splice(filterIndex, 1)
                               return testId
                             })

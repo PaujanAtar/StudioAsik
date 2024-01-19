@@ -25,7 +25,7 @@ export const getStaticProps = async (context: any) => {
     `${process.env.NEXT_PUBLIC_STUDIOASA}project?per_page=100&_embed`
   )
 
-  const data = await res.json()
+  const data = await res?.json()
 
   /* --------------------------------------------------------------------------- */
 
@@ -38,28 +38,28 @@ export const getStaticProps = async (context: any) => {
 
   const ids: any[] = [filterGallery(contentData)]
 
-  const results: string[][] = ids.map((latestId: string[]) => {
+  const results: string[][] = ids?.map((latestId: string[]) => {
     return [
       `${process.env.NEXT_PUBLIC_STUDIOASA}media?include=${latestId.join(",")}`,
     ]
   })
 
-  const fetchPromise = results.map(async (url) => {
+  const fetchPromise = results?.map(async (url) => {
     // Fetch each URL individually
     const response = await fetch(url[0])
 
-    return await response.json()
+    return await response?.json()
   })
 
   const galleryFetch = await Promise.all(fetchPromise).then((dataArray) => {
     return dataArray
   })
 
-  const galleries = galleryFetch.map((urls: any) => {
+  const galleries = galleryFetch?.map((urls: any) => {
     return urls.map((url: any) => url.source_url)
   })
 
-  const imageGalleries = galleries.map((images: any) => {
+  const imageGalleries = galleries?.map((images: any) => {
     const projectData = contentData
 
     return {

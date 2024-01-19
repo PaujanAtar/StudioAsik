@@ -1,6 +1,7 @@
 import styles from "@/styles/About.module.css"
 import Head from "next/head"
 import Link from "next/link"
+import { useState } from "react"
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -89,6 +90,22 @@ const About = ({ projects }: { projects: any }) => {
       city: "15",
     },
   ]
+
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [message, setMessage] = useState("")
+
+  const generateWhatsAppLink = () => {
+    const formattedMessage = `Name: ${name}%0AEmail: ${email}%0APhone Number: ${phoneNumber}%0AMessage: ${message.replace(
+      /\n/g,
+      "%0A"
+    )}`
+
+    const whatsappLink = `https://wa.me/+6281284256773?text=${formattedMessage}`
+
+    window.open(whatsappLink, "_blank")
+  }
 
   return (
     <>
@@ -279,11 +296,33 @@ const About = ({ projects }: { projects: any }) => {
             <div className={styles.contactForm}>
               <h1>Send a message</h1>
               <form>
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Email" />
-                <input type="text" placeholder="Phone Number" />
-                <input type="text" placeholder="Message" />
-                <input type="submit" value="Send to Whatsapp" />
+                <input
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+                <button type="button" onClick={generateWhatsAppLink}>
+                  Send to WhatsApp
+                </button>
               </form>
             </div>
           </div>

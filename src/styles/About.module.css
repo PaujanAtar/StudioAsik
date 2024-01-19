@@ -562,7 +562,7 @@
     line-height: normal;
 }
 
-.contactForm input[type=submit] {
+.contactForm button {
     display: flex;
     padding: 20px 24px;
     justify-content: center;

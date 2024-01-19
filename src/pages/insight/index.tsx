@@ -10,21 +10,14 @@ export const getStaticProps = async () => {
 
   const data = await res.json()
 
-  /* console.log(data) */
-
   const api = data?.filter(
     (val: any) =>
       val.parent === 0 && val.name !== "Team" && val.name !== "featured"
   )
 
-  /* console.log(api) */
-
   const name = api.map((ids: any) => ids.name)
 
-  /* console.log(name) */
-
   const id = api.map((ids: any) => ids.id)
-  /* console.log(id) */
 
   const mergedData = name.map((name: any, index: any) => ({
     name,
@@ -60,8 +53,6 @@ const Insights = ({ insights }: { insights: any }) => {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_STUDIOASA}posts?_embed&page=1&per_page=15&order=${sort}${param}${id}${key}${word}`
       )
-
-      console.log(res)
 
       const api = await res.json()
       setData(api)
@@ -279,7 +270,13 @@ const Insights = ({ insights }: { insights: any }) => {
                       type="text"
                       placeholder="Enter a keyword"
                       onChange={(event) => {
-                        setKey("&search="), setWord(event.target.value)
+                        let typingTimer
+                        clearTimeout(typingTimer)
+
+                        typingTimer = setTimeout(() => {
+                          setKey("&search=")
+                          setWord(event.target.value)
+                        }, 1000)
                       }}
                     />
                   </form>
@@ -308,7 +305,13 @@ const Insights = ({ insights }: { insights: any }) => {
                         type="text"
                         placeholder="Enter a keyword"
                         onChange={(event) => {
-                          setKey("&search="), setWord(event.target.value)
+                          let typingTimer
+                          clearTimeout(typingTimer)
+
+                          typingTimer = setTimeout(() => {
+                            setKey("&search=")
+                            setWord(event.target.value)
+                          }, 1000)
                         }}
                       />
                     </form>
