@@ -1,9 +1,7 @@
 import Head from "next/head"
 import styles from "@/styles/IDetails.module.css"
 import Link from "next/link"
-import { useState } from "react"
 import { useRouter } from "next/router"
-import { Router } from "react-router-dom"
 
 export const getStaticPaths = async () => {
   const res = await fetch(
