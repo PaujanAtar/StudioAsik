@@ -80,11 +80,11 @@ export const getStaticProps = async () => {
     return await response.json()
   })
 
-  const promises = await Promise.all(fetchPromises).then((dataArray) => {
+  const dataa = await Promise.all(fetchPromises).then((dataArray) => {
     return dataArray
   })
 
-  const highlightData = promises?.map((urls: any) => {
+  const highlightData = dataa?.map((urls: any) => {
     return urls.map((url: any) => url.source_url)
   })
 
@@ -317,21 +317,19 @@ export default function Home({
             />
           </div>
           <div className={styles.secondary}>
-            <div className={styles.secondaryTexts}>
-              <h2>GARDEN DESIGN, RESIDENTIAL</h2>
-              <h1
-                style={{ textTransform: "uppercase" }}
-                dangerouslySetInnerHTML={{
-                  __html: latest[index].title.rendered,
-                }}
-              />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-                nisi dolore natus, modi blanditiis dolor suscipit voluptatibus
-                temporibus similique dicta! Dolorem facilis sequi quisquam iure,
-                ipsa natus! Suscipit, debitis perspiciatis?
-              </p>
-            </div>
+            <h2>GARDEN DESIGN, RESIDENTIAL</h2>
+            <h1
+              style={{ textTransform: "uppercase" }}
+              dangerouslySetInnerHTML={{
+                __html: latest[index].title.rendered,
+              }}
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+              nisi dolore natus, modi blanditiis dolor suscipit voluptatibus
+              temporibus similique dicta! Dolorem facilis sequi quisquam iure,
+              ipsa natus! Suscipit, debitis perspiciatis?
+            </p>
             <div className={styles.highlightImageContainer}>
               <img src={latest[index].images[0]} alt="highlight" />
               <button
@@ -351,7 +349,7 @@ export default function Home({
                     key={i}
                     className={
                       index === i
-                        ? styles.carouselIndicatorsActiveHighlight
+                        ? styles.carouselIndicatorsActive
                         : styles.carouselIndicators
                     }
                     onClick={() => {
